@@ -1,0 +1,14 @@
+[Unit]
+Description=MainMenu
+After=multi-user.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/projects/pi
+ExecStart=/usr/bin/python3 /home/pi/projects/pi/mainmenu.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
