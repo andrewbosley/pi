@@ -3,6 +3,7 @@ from hardware import ADCReader, LCDDisplay
 import joystickvalues
 import update
 import shutdown
+import pimonitor
 import time
 import os
 
@@ -16,6 +17,10 @@ OPTIONS = [ # Label 10 char max
     {
         "label": "Joystick",
         "handler": lambda: joystickvalues.run(lcd, adc, btn)
+    },
+    {
+        "label": "PI Monitor",
+        "handler": lambda: pimonitor.run(lcd, adc, btn)
     },
     {
         "label": "Update",
@@ -32,7 +37,7 @@ def show_splash():
     lcd.cmd(0x01)
     lcd.message(0, 0, "-- WELCOME")
     lcd.message(8, 1, "BOZ --")
-    time.sleep(0.05)
+    time.sleep(10)
 show_splash()
 
 # Menu logic
