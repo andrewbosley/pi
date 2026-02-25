@@ -54,11 +54,11 @@ try:
 
         # Up and down
         if y_nav < 50: # Up
-            selected = (selected - 1) % len(options)
+            selected = (selected + 1) % len(options)
             lcd.cmd(0x01)
             time.sleep(0.2)
         elif y_nav > 200: # Down
-            selected = (selected + 1) % len(options)
+            selected = (selected - 1) % len(options)
             lcd.cmd(0x01)
             time.sleep(0.2)
 
