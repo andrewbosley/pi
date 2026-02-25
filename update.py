@@ -19,7 +19,7 @@ def run(lcd, adc, btn):
             lcd.message(0, 0, "Success!")
             lcd.message(0, 1, "Reloading...")
             time.sleep(2)
-            os.system("sudo systemctl restart MainMenu.service")
+            os.system("sudo systemctl restart mainmenu.service")
 
         elif x_val < 50 or x_val > 200 or y_val < 50 or y_val > 200:
             lcd.cmd(0x01)
